@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="美化委員会改革計画 — ブランド化・理念再定義・尖った企画・ビジュアル統一">
+  <meta name="theme-color" content="#070b14">
+  <title>美化委員会 改革計画 · ブランド化</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient-gradient"></div>
+    <div class="ambient-mesh"></div>
+    <div class="ambient-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+  </div>
+  <canvas id="dust-canvas" aria-hidden="true"></canvas>
+
+  <div class="page-wrap">
+    <header class="hero">
+      <div class="container">
+        <div class="hero-badge">REFORM PLAN · 2024後期</div>
+        <h1>美化委員会<br><span class="accent-text">改革計画</span></h1>
+        <p class="hero-sub">不本意ながら美化委員長：佐藤 晴<br>このままでは風紀委員会に“美化”の看板を取られてしまう。<br>これは存亡をかけた闘いである。</p>
+        <div class="goal-banner">
+          <div class="label">最重要ミッション</div>
+          <div class="value">美化委員会をブランド化する</div>
+        </div>
+        <div class="hero-cta">
+          <a href="#brand" class="btn btn-primary">ブランド化の要件</a>
+          <a href="#plans" class="btn btn-ghost">仕事企画案</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="section" id="current">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="eyebrow">01 · Current</p>
+          <h2>今の美化委員会</h2>
+        </div>
+        <div class="grid-2">
+          <div class="card reveal reveal-delay-1">
+            <h3>活動目標</h3>
+            <p class="big-text">脱ハウスダスト</p>
+          </div>
+          <div class="card reveal reveal-delay-2">
+            <h3>活動内容</h3>
+            <ul class="list">
+              <li>黒板消しクリーナーのフィルター掃除</li>
+              <li>掃除機のフィルター掃除・交換の呼びかけ</li>
+              <li>教室の備品管理と不足分の確認</li>
+              <li>カーテンを束ねる“タッセル”の不足分確認</li>
+              <li>必要に応じて清掃活動を実施</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card danger-card reveal reveal-delay-3" style="margin-top:1.5rem;">
+          <h3>現時点での課題</h3>
+          <ul class="list">
+            <li>把握している仕事内容の不足</li>
+            <li>月イチの仕事も忘れることがある</li>
+            <li>風紀委員会に仕事を取られている気がする</li>
+            <li>外部からも「黒板消しクリーナーのフィルター掃除しかしてない」とバレている</li>
+          </ul>
+          <p class="highlight-line">そして何より、<strong>目立たない委員会すぎる！</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="improve">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="eyebrow">02 · Direction</p>
+          <h2>改善案（概要）</h2>
+        </div>
+        <div class="activity-grid">
+          <article class="card activity-card reveal reveal-delay-1">
+            <div class="icon">📅</div>
+            <h3>集まる機会を増やす</h3>
+            <p>委員会単位（または学年単位）で集まれる機会を増やす</p>
+          </article>
+          <article class="card activity-card reveal reveal-delay-2">
+            <div class="icon">📢</div>
+            <h3>定期業務の直前アナウンス</h3>
+            <p>放送などでのリマインドを仕組み化</p>
+          </article>
+          <article class="card activity-card reveal reveal-delay-3">
+            <div class="icon">⚡</div>
+            <h3>仕事と企画を増やす</h3>
+            <p>シンプルに仕事と企画を増やす！！</p>
+          </article>
+          <article class="card activity-card reveal reveal-delay-1">
+            <div class="icon">🧹</div>
+            <h3>清掃の役割分担</h3>
+            <p>風紀＝校舎外 / 美化＝校舎内。朝の時間合わせ or 別時間</p>
+          </article>
+          <article class="card activity-card reveal reveal-delay-2">
+            <div class="icon">🎪</div>
+            <h3>文化祭をハック</h3>
+            <p>文化祭をハックして、なにかやる</p>
+          </article>
+          <article class="card activity-card reveal reveal-delay-3">
+            <div class="icon">📰</div>
+            <h3>美化広報誌</h3>
+            <p>「保健だより」みたいなやつ。現代っぽくインフォグラフィックス的なもの</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="brand">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="eyebrow">03 · Brand</p>
+          <h2>ブランド化に必要なもの</h2>
+        </div>
+        <div class="brand-grid">
+          <div class="card brand-card reveal reveal-delay-1">
+            <span class="num">01</span>
+            <h3>理念の再定義と拡張</h3>
+            <p>アイデンティティをアップデートする</p>
+          </div>
+          <div class="card brand-card reveal reveal-delay-2">
+            <span class="num">02</span>
+            <h3>独自性と尖った企画</h3>
+            <p>他との差別化。目立つ活動を1〜2つ</p>
+          </div>
+          <div class="card brand-card reveal reveal-delay-3">
+            <span class="num">03</span>
+            <h3>見た目の統一</h3>
+            <p>ロゴ・カラー・ビジュアルの統一</p>
+          </div>
+          <div class="card brand-card reveal reveal-delay-4">
+            <span class="num">04</span>
+            <h3>発信とコミュニケーション</h3>
+            <p>知らなければブランドではない</p>
+          </div>
+        </div>
+
+        <div class="card table-card reveal" style="margin-top:2.5rem; overflow-x:auto;">
+          <h3 style="margin-bottom:1.25rem;">普通の委員会 vs ブランド化した目指すべき姿</h3>
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>項目</th>
+                <th>現状</th>
+                <th>目指すべき姿</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>役割</td>
+                <td>言われた業務内容をこなす</td>
+                <td><strong>学校の空間的価値を上げる</strong></td>
+              </tr>
+              <tr>
+                <td>生徒の印象</td>
+                <td>地味、めんどくさそう</td>
+                <td><strong>カッコいい、面白そう！</strong></td>
+              </tr>
+              <tr>
+                <td>活動内容</td>
+                <td>フィルター掃除、把握されていない内容</td>
+                <td><strong>斬新、イベント企画、他委員会との連携</strong></td>
+              </tr>
+              <tr>
+                <td>メンバーの士気</td>
+                <td>義務感とめんどくささを持ってやっている</td>
+                <td><strong>誇りと責任感を持って“挑める”</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="identity">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="eyebrow">04 · Identity</p>
+          <h2>理念（アイデンティティ）の再定義</h2>
+        </div>
+        <div class="speech-card reveal">
+          <p>ただの「掃除をする委員会」ではなく、</p>
+          <p class="big-quote">「学校を一番クリエイティブで快適な空間にするプロ集団」</p>
+          <p>のように、委員会の存在意義（ミッション）をアップデートする。</p>
+          <p>スローガンが「脱ハウスダスト」であるのならば、理念は「座右の銘」！</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="plans">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="eyebrow">05 · Action</p>
+          <h2>仕事企画案</h2>
+        </div>
+
+        <div class="plan-block reveal">
+          <h3>ブランドマーク総選挙</h3>
+          <ul class="list">
+            <li>美化委員会のブランド化を図り、ロゴを校内で大募集する</li>
+            <li>紙に書いてもらうか、ClassroomにFormを配信しデータファイルを応募</li>
+            <li>採用されたロゴは広報誌や資料などに活用</li>
+            <li>永続 or 今期のみは未定 → ハイブリッド型が理想（基本ロゴ＋サブデザイン）</li>
+          </ul>
+        </div>
+
+        <div class="plan-block reveal reveal-delay-1">
+          <h3>美化広報誌の制作</h3>
+          <p>インフォグラフィックを取り入れた、雑誌感覚で読める広報誌を作成・公開。</p>
+          <ul class="list">
+            <li>投票形式で校内で最もきれいな教室や廊下など</li>
+            <li>ハウスダストや美化関連情報（豆知識）</li>
+            <li>その時その時の面白そうな企画</li>
+          </ul>
+          <p>掲載方法：各クラス1枚ポスター形式 / 冊子形式でClassroom電子配布</p>
+        </div>
+
+        <div class="plan-block reveal reveal-delay-2">
+          <h3>美化委員の校内清掃</h3>
+          <p>風紀委員会が校舎外の清掃を朝行っているように、美化委員会は校舎内の清掃を行う。</p>
+          <ul class="list">
+            <li>自分に関わりの深い場所を徹底的に掃除</li>
+            <li>きれいではないと感じた場所は積極的に清掃</li>
+            <li>受験生向け校舎内見学・文化祭・体育祭前の特別清掃</li>
+          </ul>
+        </div>
+
+        <div class="plan-block reveal reveal-delay-3">
+          <h3>既存業務の強化・恒例化</h3>
+          <ul class="list">
+            <li>フィルター類：Google Spreadsheetsで記録表（生徒記入）</li>
+            <li>タッセル・備品：Google Formsで常時受付型報告フォーム</li>
+            <li>月に一度、黒板消しクリーナーフィルター掃除のタイミングで、掃除機フィルター・備品・タッセル確認を行い記録する</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-bottom:5rem;">
+      <div class="container">
+        <div class="speech-card reveal" style="text-align:center;">
+          <p class="big-quote" style="margin-bottom:1rem;">一番、委員長がやりたいことは、</p>
+          <p class="big-quote accent-text">美化委員会をブランド化する！</p>
+          <p style="margin-top:1.5rem;">このままでは、風紀委員会に“美化”の看板を取られてしまう！！<br>これは、美化委員会の存亡をかけた闘いである……</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p><strong>美化委員会 改革計画</strong></p>
+      <p>不本意ながら美化委員長：佐藤 晴</p>
+      <p style="margin-top:0.75rem;"><a href="https://r25347sh.github.io/bika-committee/" style="color:var(--accent);">← 公式サイトへ戻る</a></p>
+    </footer>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
