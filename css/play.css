@@ -1,105 +1,47 @@
-/* PLAY MODE for reform + portal */
-.sticker {
-  position: absolute; font-size: 1.6rem; opacity: 0.7; pointer-events: none; z-index: 3;
-  animation: sticker-bob 4s ease-in-out infinite;
-  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.1));
-}
-.sticker-1 { top: 6%; right: 4%; animation-delay: 0s; font-size: 1.8rem; }
-.sticker-2 { bottom: 15%; left: 3%; animation-delay: -1.5s; font-size: 1.5rem; }
-.sticker-3 { top: 40%; right: 8%; animation-delay: -2.5s; font-size: 1.3rem; opacity: 0.55; }
-@keyframes sticker-bob {
-  0%, 100% { transform: translateY(0) rotate(-8deg) scale(1); }
-  30% { transform: translateY(-14px) rotate(6deg) scale(1.08); }
-  60% { transform: translateY(-4px) rotate(-4deg) scale(0.96); }
-}
-.hero-badge {
-  animation: stamp-in 0.8s cubic-bezier(0.34, 1.6, 0.64, 1) both, badge-wiggle 5s ease-in-out 1.5s infinite !important;
-}
-.hero-badge:hover { transform: rotate(4deg) scale(1.12) !important; animation-play-state: paused !important; }
-@keyframes badge-wiggle {
-  0%, 100% { transform: rotate(-1.5deg); }
-  20% { transform: rotate(2.5deg); }
-  40% { transform: rotate(-2deg); }
-  60% { transform: rotate(1deg); }
-}
-@keyframes stamp-in {
-  from { opacity: 0; transform: rotate(-8deg) scale(0.8); }
-  to { opacity: 1; transform: rotate(-1.5deg) scale(1); }
-}
-.mission-banner:hover {
-  transform: rotate(-2.5deg) translateY(-8px) scale(1.04) !important;
-  box-shadow: 10px 10px 0 var(--accent-soft), var(--shadow-md) !important;
-}
-.card:hover { transform: translateY(-10px) rotate(-0.6deg) !important; }
-.card:nth-child(even):hover { transform: translateY(-10px) rotate(0.6deg) !important; }
-.btn-primary:hover { transform: translateY(-5px) scale(1.06) !important; }
-.btn-ghost:hover { transform: translateY(-5px) scale(1.04) !important; }
-.btn:active { transform: scale(0.9) !important; }
-.theme-toggle:hover { transform: scale(1.15) rotate(25deg) !important; }
-.num-card:hover .num { transform: scale(1.2) rotate(-6deg) !important; }
-.highlight-line { animation: highlight-pop 2.5s ease-in-out infinite; }
-@keyframes highlight-pop {
-  0%, 100% { transform: rotate(-0.5deg) scale(1); }
-  50% { transform: rotate(0.5deg) scale(1.03); }
-}
-.page-wrap::before {
-  content: "\u2726"; position: absolute; top: 12%; left: 2%; font-size: 0.95rem;
-  color: var(--accent); opacity: 0.35; pointer-events: none; z-index: 3;
-  animation: sparkle-twinkle 3s ease-in-out infinite;
-}
-.page-wrap::after {
-  content: "\u2727"; position: absolute; top: 50%; right: 3%; font-size: 1.15rem;
-  color: var(--warm); opacity: 0.3; pointer-events: none; z-index: 3;
-  animation: sparkle-twinkle 3.5s ease-in-out 1s infinite;
-}
-@keyframes sparkle-twinkle {
-  0%, 100% { opacity: 0.2; transform: scale(1) rotate(0deg); }
-  50% { opacity: 0.55; transform: scale(1.3) rotate(20deg); }
-}
-.site-portal {
-  position: fixed;
-  bottom: max(1.25rem, env(safe-area-inset-bottom));
-  left: max(1rem, env(safe-area-inset-left));
-  z-index: 99970;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.65rem 1rem 0.65rem 0.75rem;
-  background: var(--surface);
-  border: 2px solid var(--accent);
-  border-radius: 999px;
-  box-shadow: 4px 4px 0 var(--accent-soft), var(--shadow-md);
-  color: var(--ink);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-decoration: none;
-  transform: rotate(-2deg);
-  transition: transform 0.4s cubic-bezier(0.34, 1.6, 0.64, 1), box-shadow 0.3s;
-  animation: portal-bob 3.5s ease-in-out infinite;
-}
-.site-portal:hover {
-  transform: rotate(2deg) scale(1.08) translateY(-4px);
-  box-shadow: 6px 6px 0 var(--accent-soft), var(--shadow-lg);
-  animation-play-state: paused;
-}
-.site-portal:active { transform: scale(0.94) rotate(-1deg); }
-.site-portal .portal-icon {
-  font-size: 1.15rem;
-  animation: portal-spin 6s linear infinite;
-  display: inline-block;
-}
-.site-portal:hover .portal-icon { animation-duration: 1.2s; }
-@keyframes portal-bob {
-  0%, 100% { transform: rotate(-2deg) translateY(0); }
-  50% { transform: rotate(-2deg) translateY(-6px); }
-}
-@keyframes portal-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .sticker, .hero-badge, .highlight-line, .page-wrap::before, .page-wrap::after, .site-portal, .site-portal .portal-icon {
-    animation: none !important;
-  }
-}
+/* PLAY MODE denser + easter-ready (reform) */
+.sticker{position:absolute;font-size:1.6rem;opacity:.72;pointer-events:none;z-index:3;animation:sticker-bob 4s ease-in-out infinite;filter:drop-shadow(0 3px 6px rgba(0,0,0,.1))}
+.sticker-1{top:6%;right:4%;font-size:1.85rem}
+.sticker-2{bottom:15%;left:3%;animation-delay:-1.5s;font-size:1.5rem}
+.sticker-3{top:40%;right:8%;animation-delay:-2.5s;font-size:1.3rem;opacity:.55}
+@keyframes sticker-bob{0%,100%{transform:translateY(0) rotate(-8deg) scale(1)}30%{transform:translateY(-14px) rotate(6deg) scale(1.08)}60%{transform:translateY(-4px) rotate(-4deg) scale(.96)}}
+.hero-badge{cursor:pointer;animation:stamp-in .8s cubic-bezier(.34,1.6,.64,1) both,badge-wiggle 5s ease-in-out 1.5s infinite!important}
+.hero-badge:hover{transform:rotate(4deg) scale(1.12)!important;animation-play-state:paused!important}
+@keyframes badge-wiggle{0%,100%{transform:rotate(-1.5deg)}20%{transform:rotate(2.5deg)}40%{transform:rotate(-2deg)}60%{transform:rotate(1deg)}}
+@keyframes stamp-in{from{opacity:0;transform:rotate(-10deg) scale(.7)}to{opacity:1;transform:rotate(-1.5deg) scale(1)}}
+.mission-banner{cursor:pointer;transition:transform .45s cubic-bezier(.34,1.6,.64,1),box-shadow .35s}
+.mission-banner:hover{transform:rotate(-2.5deg) translateY(-8px) scale(1.04)!important;box-shadow:10px 10px 0 var(--accent-soft),var(--shadow-md)!important}
+.card{position:relative;transition:transform .35s cubic-bezier(.34,1.3,.64,1),box-shadow .4s!important;transform-style:preserve-3d}
+.card:hover{transform:translateY(-10px) rotate(-.6deg)!important}
+.card:nth-child(even):hover{transform:translateY(-10px) rotate(.6deg)!important}
+.card::before{content:"";position:absolute;top:12px;right:14px;width:8px;height:8px;border-radius:50%;background:var(--accent);opacity:.25;transition:transform .4s cubic-bezier(.34,1.6,.64,1),opacity .3s;z-index:1}
+.card:hover::before{transform:scale(1.8);opacity:.55}
+.num-card:hover .num{transform:scale(1.2) rotate(-6deg)!important}
+.btn{position:relative;overflow:hidden;transition:transform .4s cubic-bezier(.34,1.6,.64,1)!important}
+.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.25) 50%,transparent 70%);transform:translateX(-120%);transition:transform .55s ease}
+.btn:hover::after{transform:translateX(120%)}
+.btn-primary:hover{transform:translateY(-5px) scale(1.06)!important}
+.btn-ghost:hover{transform:translateY(-5px) scale(1.04)!important}
+.btn:active{transform:scale(.9)!important}
+.theme-toggle:hover{transform:scale(1.15) rotate(25deg)!important}
+.highlight-line{animation:highlight-pop 2.5s ease-in-out infinite}
+@keyframes highlight-pop{0%,100%{transform:rotate(-.5deg) scale(1)}50%{transform:rotate(.5deg) scale(1.03)}}
+.page-wrap::before{content:"\u2726";position:absolute;top:12%;left:2%;font-size:.95rem;color:var(--accent);opacity:.35;pointer-events:none;z-index:3;animation:sparkle-twinkle 3s ease-in-out infinite}
+.page-wrap::after{content:"\u2727";position:absolute;top:50%;right:3%;font-size:1.15rem;color:var(--warm);opacity:.3;pointer-events:none;z-index:3;animation:sparkle-twinkle 3.5s ease-in-out 1s infinite}
+@keyframes sparkle-twinkle{0%,100%{opacity:.2;transform:scale(1) rotate(0)}50%{opacity:.55;transform:scale(1.3) rotate(20deg)}}
+.site-portal{position:fixed;bottom:max(1.25rem,env(safe-area-inset-bottom));left:max(1rem,env(safe-area-inset-left));z-index:99970;display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem .65rem .75rem;background:var(--surface);border:2px solid var(--accent);border-radius:999px;box-shadow:4px 4px 0 var(--accent-soft),var(--shadow-md);color:var(--ink);font-size:.78rem;font-weight:700;letter-spacing:.04em;text-decoration:none;transform:rotate(-2deg);transition:transform .4s cubic-bezier(.34,1.6,.64,1),box-shadow .3s;animation:portal-bob 3.5s ease-in-out infinite}
+.site-portal:hover{transform:rotate(2deg) scale(1.08) translateY(-4px);box-shadow:6px 6px 0 var(--accent-soft),var(--shadow-lg);animation-play-state:paused}
+.site-portal .portal-icon{font-size:1.15rem;animation:portal-spin 6s linear infinite;display:inline-block}
+@keyframes portal-bob{0%,100%{transform:rotate(-2deg) translateY(0)}50%{transform:rotate(-2deg) translateY(-6px)}}
+@keyframes portal-spin{to{transform:rotate(360deg)}}
+.hero h1{position:relative;display:inline-block}
+.hero h1::after{content:"";position:absolute;left:5%;bottom:.08em;width:90%;height:.18em;background:color-mix(in srgb,var(--accent) 28%,transparent);z-index:-1;border-radius:2px;transform:rotate(-1deg);animation:underline-wiggle 3s ease-in-out infinite}
+@keyframes underline-wiggle{0%,100%{transform:rotate(-1deg) scaleX(1)}50%{transform:rotate(.5deg) scaleX(1.03)}}
+.eyebrow{animation:eyebrow-pulse 2.8s ease-in-out infinite}
+@keyframes eyebrow-pulse{0%,100%{letter-spacing:.18em}50%{letter-spacing:.26em}}
+.hero .container{position:relative}
+.hero .container::before,.hero .container::after{content:"";position:absolute;width:28px;height:28px;border:2px solid color-mix(in srgb,var(--accent) 35%,transparent);pointer-events:none;opacity:.5}
+.hero .container::before{top:0;left:.5rem;border-right:none;border-bottom:none}
+.hero .container::after{bottom:0;right:.5rem;border-left:none;border-top:none}
+.site-footer a{display:inline-block;transition:transform .35s cubic-bezier(.34,1.6,.64,1)}
+.site-footer a:hover{transform:scale(1.08) rotate(-2deg)}
+@media (prefers-reduced-motion:reduce){.sticker,.hero-badge,.page-wrap::before,.page-wrap::after,.site-portal,.eyebrow,.highlight-line,.hero h1::after{animation:none!important}}
