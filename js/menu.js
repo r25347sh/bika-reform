@@ -1,5 +1,5 @@
 /**
- * Radial + FAB for 改革計画
+ * 美化改革 — Radial Menu + Hamburger FAB
  */
 (function () {
   "use strict";
@@ -7,9 +7,9 @@
   function buildMenuData() {
     return [
       { label: "概要", icon: "📋", url: "index.html" },
-      { label: "ブランド化", icon: "✦", url: "brand.html" },
+      { label: "ブランド化", icon: "✨", url: "brand.html" },
       { label: "企画案", icon: "💡", url: "plans.html" },
-      { label: "公式サイト", icon: "⌂", url: "https://r25347sh.github.io/bika-committee/" }
+      { label: "公式サイト", icon: "🏠", url: "https://r25347sh.github.io/bika-committee/" }
     ];
   }
 
@@ -67,7 +67,7 @@
       btn.setAttribute("data-label", data.item.label || "");
       btn.style.setProperty("--x", data.x + "px");
       btn.style.setProperty("--y", data.y + "px");
-      btn.style.transitionDelay = idx * 28 + "ms";
+      btn.style.transitionDelay = idx * 32 + "ms";
       btn.innerHTML = "<span>" + (data.item.icon || "·") + "</span>";
       btn.addEventListener("click", function (e) {
         e.stopPropagation();
@@ -80,195 +80,150 @@
         }
       });
       itemsContainer.appendChild(btn);
-      setTimeout(function () { btn.classList.add("rendered"); }, 14);
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { btn.classList.add("rendered"); });
+      });
     });
-    Object.keys(shellsUsed).forEach(function (s) {
+    Object.keys(shellsUsed).forEach(function (sIdx) {
+      var r = SHELL_RADII[parseInt(sIdx, 10)];
       var orbit = document.createElement("div");
       orbit.className = "rm-shell-orbit";
-      var r = SHELL_RADII[Number(s)];
       orbit.style.width = r * 2 + "px";
       orbit.style.height = r * 2 + "px";
       orbit.style.marginLeft = -r + "px";
       orbit.style.marginTop = -r + "px";
-      orbit.style.left = "0";
-      orbit.style.top = "0";
       orbitsContainer.appendChild(orbit);
     });
-    if (coreBtn) coreBtn.classList.toggle("visible", menuStack.length > 0);
-  }
-
-  function createMenuDOM() {
-    if (document.querySelector(".radial-menu-wrapper")) return;
-    menuEl = document.createElement("div");
-    menuEl.className = "radial-menu-wrapper";
-    menuEl.setAttribute("aria-hidden", "true");
-    var canvas = document.createElement("canvas");
-    canvas.className = "rm-canvas-layer";
-    menuEl.appendChild(canvas);
-    orbitsContainer = document.createElement("div");
-    menuEl.appendChild(orbitsContainer);
-    itemsContainer = document.createElement("div");
-    menuEl.appendChild(itemsContainer);
-    coreBtn = document.createElement("button");
-    coreBtn.type = "button";
-    coreBtn.className = "rm-core-btn";
-    coreBtn.setAttribute("aria-label", "戻る");
-    coreBtn.innerHTML = "←";
-    coreBtn.addEventListener("click", function (e) {
-      e.stopPropagation();
-      if (menuStack.length) renderItems(menuStack.pop());
-      else closeMenu();
-    });
-    menuEl.appendChild(coreBtn);
-    document.body.appendChild(menuEl);
-  }
-
-  function viewportSize() {
-    var vv = window.visualViewport;
-    if (vv) return { w: vv.width, h: vv.height };
-    return { w: window.innerWidth, h: window.innerHeight };
   }
 
   function openMenu(x, y) {
-    if (!menuEl) return;
-    var vs = viewportSize();
-    var margin = 160;
-    var cx = typeof x === "number" ? x : vs.w / 2;
-    var cy = typeof y === "number" ? y : vs.h / 2;
-    menuEl.style.left = Math.max(margin, Math.min(cx, vs.w - margin)) + "px";
-    menuEl.style.top = Math.max(margin, Math.min(cy, vs.h - margin)) + "px";
-    menuEl.classList.add("active");
-    menuEl.setAttribute("aria-hidden", "false");
+    if (pieDisabled || isOpen) return;
     isOpen = true;
     menuStack = [];
+    if (!menuEl) createMenuDOM();
+    menuEl.style.left = x + "px";
+    menuEl.style.top = y + "px";
+    menuEl.classList.add("active");
+    if (coreBtn) coreBtn.classList.remove("visible");
     renderItems(buildMenuData());
   }
 
   function closeMenu() {
-    if (!menuEl) return;
-    menuEl.classList.remove("active");
-    menuEl.setAttribute("aria-hidden", "true");
+    if (!isOpen) return;
     isOpen = false;
-    menuStack = [];
-    var items = menuEl.querySelectorAll(".rm-item");
-    for (var i = 0; i < items.length; i++) items[i].classList.remove("rendered");
+    if (menuEl) menuEl.classList.remove("active");
+    if (itemsContainer) {
+      var nodes = itemsContainer.querySelectorAll(".rm-item");
+      for (var i = 0; i < nodes.length; i++) nodes[i].classList.remove("rendered");
+    }
     if (coreBtn) coreBtn.classList.remove("visible");
   }
 
-  function ensureFab() {
-    if (document.querySelector(".menu-fab")) return;
-    var fab = document.createElement("button");
-    fab.type = "button";
-    fab.className = "menu-fab";
-    fab.setAttribute("aria-label", "メニューを開く");
-    fab.innerHTML = "☰";
-    document.body.appendChild(fab);
-    fab.addEventListener("click", function (e) {
+  function createMenuDOM() {
+    menuEl = document.createElement("div");
+    menuEl.className = "radial-menu-wrapper";
+    orbitsContainer = document.createElement("div");
+    orbitsContainer.className = "rm-canvas-layer";
+    itemsContainer = document.createElement("div");
+    itemsContainer.className = "rm-canvas-layer";
+    coreBtn = document.createElement("button");
+    coreBtn.type = "button";
+    coreBtn.className = "rm-core-btn";
+    coreBtn.setAttribute("aria-label", "戻る");
+    coreBtn.textContent = "↩";
+    coreBtn.addEventListener("click", function (e) {
       e.stopPropagation();
-      e.preventDefault();
-      openHamburger();
+      if (menuStack.length) {
+        renderItems(menuStack.pop());
+        if (!menuStack.length) coreBtn.classList.remove("visible");
+      } else closeMenu();
     });
+    menuEl.appendChild(orbitsContainer);
+    menuEl.appendChild(itemsContainer);
+    menuEl.appendChild(coreBtn);
+    document.body.appendChild(menuEl);
   }
 
-  function ensureHamburgerUI() {
-    if (document.getElementById("ham-overlay")) return;
-    var ov = document.createElement("div");
-    ov.id = "ham-overlay";
-    ov.setAttribute("aria-hidden", "true");
-    ov.addEventListener("click", closeHamburger);
-    document.body.appendChild(ov);
-    var panel = document.createElement("div");
-    panel.id = "ham-panel";
-    panel.innerHTML =
-      '<div class="ham-header">' +
-      '<div class="ham-title">改革計画</div>' +
-      '<button type="button" class="ham-close" id="ham-close" aria-label="閉じる">✕</button>' +
-      '</div><div id="ham-list"></div>';
-    document.body.appendChild(panel);
-    document.getElementById("ham-close").onclick = closeHamburger;
+  function onPointerDown(e) {
+    if (e.button !== undefined && e.button !== 0) return;
+    if (e.target.closest && e.target.closest(".ham-fab, .ham-panel, .radial-menu-wrapper, a, button, input, textarea, select")) return;
+    startX = e.clientX;
+    startY = e.clientY;
+    clearTimeout(timer);
+    timer = setTimeout(function () { openMenu(startX, startY); }, LONG_PRESS_MS);
+  }
+  function onPointerMove(e) {
+    if (!timer) return;
+    if (Math.abs(e.clientX - startX) > MOVE_THRESHOLD || Math.abs(e.clientY - startY) > MOVE_THRESHOLD) {
+      clearTimeout(timer); timer = null;
+    }
+  }
+  function onPointerUp() { clearTimeout(timer); timer = null; }
+  function onTripleTap(e) {
+    if (e.target.closest && e.target.closest(".ham-fab, .ham-panel, .radial-menu-wrapper, a, button")) return;
+    tapCount++;
+    clearTimeout(tapTimer);
+    if (tapCount >= 3) { tapCount = 0; openMenu(e.clientX, e.clientY); return; }
+    tapTimer = setTimeout(function () { tapCount = 0; }, TRIPLE_TAP_DELAY_MS);
   }
 
-  function openHamburger() {
-    ensureHamburgerUI();
-    closeMenu();
-    pieDisabled = true;
-    var list = document.getElementById("ham-list");
-    list.innerHTML = "";
+  var hamFab, hamPanel, hamOpen = false;
+  function closeHamburger() {
+    hamOpen = false;
+    if (hamFab) hamFab.classList.remove("open");
+    if (hamPanel) hamPanel.classList.remove("open");
+  }
+  function toggleHamburger() {
+    hamOpen = !hamOpen;
+    if (hamFab) hamFab.classList.toggle("open", hamOpen);
+    if (hamPanel) hamPanel.classList.toggle("open", hamOpen);
+  }
+  function buildHamburger() {
+    hamFab = document.createElement("button");
+    hamFab.type = "button";
+    hamFab.className = "ham-fab";
+    hamFab.setAttribute("aria-label", "メニュー");
+    hamFab.innerHTML = "☰";
+    hamFab.addEventListener("click", function (e) { e.stopPropagation(); toggleHamburger(); });
+    hamPanel = document.createElement("div");
+    hamPanel.className = "ham-panel";
+    hamPanel.setAttribute("role", "menu");
     buildMenuData().forEach(function (entry) {
       var a = document.createElement("a");
+      a.href = entry.url;
       a.className = "ham-link";
-      a.href = entry.url || "#";
-      a.textContent = (entry.icon ? entry.icon + " " : "") + entry.label;
+      a.innerHTML = '<span class="ham-icon">' + (entry.icon || "·") + "</span><span>" + entry.label + "</span>";
       a.addEventListener("click", function (e) {
+        if (entry.url.indexOf("http") === 0) return;
         e.preventDefault();
         navigateWithDelay(entry.url);
       });
-      list.appendChild(a);
+      hamPanel.appendChild(a);
     });
-    var ov = document.getElementById("ham-overlay");
-    var panel = document.getElementById("ham-panel");
-    if (ov) { ov.classList.add("open"); ov.setAttribute("aria-hidden", "false"); }
-    if (panel) panel.classList.add("open");
+    document.body.appendChild(hamPanel);
+    document.body.appendChild(hamFab);
   }
 
-  function closeHamburger() {
-    var ov = document.getElementById("ham-overlay");
-    var panel = document.getElementById("ham-panel");
-    if (ov) { ov.classList.remove("open"); ov.setAttribute("aria-hidden", "true"); }
-    if (panel) panel.classList.remove("open");
-    pieDisabled = false;
-  }
-
-  function initEvents() {
-    document.addEventListener("pointerdown", function (e) {
-      if (e.target.closest && (
-        e.target.closest(".menu-fab") ||
-        e.target.closest(".radial-menu-wrapper") ||
-        e.target.closest("#ham-panel") ||
-        e.target.closest("#ham-overlay") ||
-        e.target.closest(".theme-toggle") ||
-        e.target.closest(".top-nav")
-      )) return;
-      if (isOpen && menuEl && !menuEl.contains(e.target)) { closeMenu(); return; }
-      startX = e.clientX; startY = e.clientY;
-      tapCount++;
-      clearTimeout(tapTimer);
-      if (tapCount === 3) {
-        clearTimeout(timer); timer = null; tapCount = 0;
-        if (!pieDisabled) openMenu(startX, startY);
-        return;
-      }
-      tapTimer = setTimeout(function () { tapCount = 0; }, TRIPLE_TAP_DELAY_MS);
-      if (pieDisabled) return;
-      clearTimeout(timer);
-      timer = setTimeout(function () {
-        if (pieDisabled) return;
-        tapCount = 0;
-        openMenu(startX, startY);
-      }, LONG_PRESS_MS);
-    }, { passive: true });
-
-    document.addEventListener("pointermove", function (e) {
-      if (!timer) return;
-      var dx = e.clientX - startX, dy = e.clientY - startY;
-      if (Math.sqrt(dx * dx + dy * dy) > MOVE_THRESHOLD) {
-        clearTimeout(timer); timer = null;
-      }
-    }, { passive: true });
-
-    document.addEventListener("pointerup", function () { clearTimeout(timer); timer = null; });
-    document.addEventListener("pointercancel", function () { clearTimeout(timer); timer = null; });
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape") { closeMenu(); closeHamburger(); }
-    });
-  }
-
-  function init() {
-    createMenuDOM();
-    ensureFab();
-    initEvents();
-  }
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else init();
+  document.addEventListener("mousedown", onPointerDown);
+  document.addEventListener("mousemove", onPointerMove);
+  document.addEventListener("mouseup", onPointerUp);
+  document.addEventListener("touchstart", function (e) {
+    if (e.touches.length !== 1) return;
+    onPointerDown(e.touches[0]);
+  }, { passive: true });
+  document.addEventListener("touchmove", function (e) {
+    if (e.touches.length !== 1) return;
+    onPointerMove(e.touches[0]);
+  }, { passive: true });
+  document.addEventListener("touchend", onPointerUp);
+  document.addEventListener("click", onTripleTap);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { closeMenu(); closeHamburger(); }
+  });
+  document.addEventListener("click", function (e) {
+    if (isOpen && menuEl && !menuEl.contains(e.target)) closeMenu();
+    if (hamOpen && hamPanel && !hamPanel.contains(e.target) && e.target !== hamFab) closeHamburger();
+  });
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", buildHamburger);
+  else buildHamburger();
 })();
