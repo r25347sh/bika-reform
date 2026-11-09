@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="仕事企画案 — 美化委員会改革計画 2026">
+  <meta name="theme-color" content="#f4f6f8">
+  <title>仕事企画案 · 改革計画 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient-gradient"></div>
+    <div class="ambient-grid"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </div>
+  <canvas id="dust-canvas" aria-hidden="true"></canvas>
+
+  <nav class="top-nav">
+    <div class="top-nav-inner">
+      <a class="nav-brand" href="index.html">美化<span>改革</span></a>
+      <button type="button" class="nav-toggle" aria-label="メニュー">☰</button>
+      <div class="nav-links">
+        <a href="index.html">概要</a>
+        <a href="brand.html">ブランド化</a>
+        <a href="plans.html" class="active">企画案</a>
+        <a href="https://r25347sh.github.io/bika-committee/">公式サイト</a>
+      </div>
+      <button type="button" class="theme-toggle" aria-label="テーマ切替">
+        <span class="icon-sun">☀</span><span class="icon-moon">☾</span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="page-wrap">
+    <header class="hero" style="padding-bottom:1.5rem;">
+      <div class="container">
+        <div class="hero-badge">ACTION</div>
+        <h1>仕事<span class="accent">企画案</span></h1>
+        <p class="hero-sub">ブランド化を具体的なアクションに落とす</p>
+      </div>
+    </header>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="plan-block reveal">
+          <h3>① ブランドマーク総選挙</h3>
+          <ul class="list">
+            <li>美化委員会のブランド化を図り、ロゴを校内で大募集する</li>
+            <li>紙に書いてもらうか、ClassroomにFormを配信しデータファイルを応募</li>
+            <li>採用されたロゴは広報誌や資料などに活用</li>
+            <li>今後の永続か、今期のみにするかは未定</li>
+          </ul>
+          <div class="two-col">
+            <div class="merit-box">
+              <h4>永続のメリット</h4>
+              <ul><li>覚えてもらいやすい</li><li>印象づけがしやすい</li></ul>
+            </div>
+            <div class="merit-box">
+              <h4>今期のみのメリット</h4>
+              <ul><li>毎期の活動目標にあわせて変更できる</li><li>一つのイベントのように扱える</li></ul>
+            </div>
+          </div>
+          <p style="margin-top:0.85rem;color:var(--ink-2);font-size:0.9rem;">一番良いのは、「永続的な基本ロゴ」と「行事やスローガンに応じたサブデザイン」の<strong>ハイブリッド型</strong>。</p>
+        </div>
+
+        <div class="plan-block reveal reveal-delay-1">
+          <h3>② 美化広報誌の制作</h3>
+          <p>インフォグラフィックを取り入れた、雑誌感覚で読める広報誌を作成・公開する。</p>
+          <p style="font-weight:600;color:var(--ink);margin-top:0.75rem;">掲載内容案</p>
+          <ul class="list">
+            <li>投票形式で校内で最もきれいな教室や廊下など（またはその逆…？）</li>
+            <li>ハウスダストや美化関連情報（豆知識）</li>
+            <li>その時その時の面白そうな企画</li>
+          </ul>
+          <p style="font-weight:600;color:var(--ink);margin-top:0.75rem;">掲載の仕方</p>
+          <ul class="list">
+            <li>各クラスに1枚のポスター形式</li>
+            <li>冊子形式で各学年のClassroomに電子配布</li>
+          </ul>
+        </div>
+
+        <div class="plan-block reveal reveal-delay-2">
+          <h3>③ 美化委員の校内清掃</h3>
+          <p>風紀委員会が校舎外の清掃を朝行っているように、美化委員会は校舎内の清掃を行う。</p>
+          <ul class="list">
+            <li>それぞれの教室や部室など、自分に関わりの深い場所を徹底的に掃除</li>
+            <li>きれいではないと感じた場所は積極的に清掃</li>
+          </ul>
+          <p style="font-weight:600;color:var(--ink);margin-top:0.75rem;">行事・学校見学前の特別清掃</p>
+          <ul class="list">
+            <li>受験生向けの校舎内見学</li>
+            <li>文化祭・体育祭などの前に、校舎内外の美化委員会による清掃</li>
+          </ul>
+        </div>
+
+        <div class="plan-block reveal reveal-delay-3">
+          <h3>④ 既存業務の強化・恒例化</h3>
+          <p>既存の仕事内容（フィルター類、タッセル確認、備品管理、必要に応じた清掃）の強化・再確認・恒例化。</p>
+          <p style="font-weight:600;color:var(--ink);margin-top:0.75rem;">記録管理系</p>
+          <ul class="list">
+            <li>フィルター類：Google Spreadsheetsで記録表（生徒記入）</li>
+            <li>タッセル・備品：Google Formsで常時受付型の報告フォーム</li>
+          </ul>
+          <p style="font-weight:600;color:var(--ink);margin-top:0.75rem;">業務恒例化系</p>
+          <ul class="list">
+            <li>月に一度、黒板消しクリーナーのフィルター掃除のタイミングで、掃除機フィルター・備品・タッセル確認を行い、記録表に記録する</li>
+          </ul>
+        </div>
+
+        <div class="quote-card reveal" style="margin-top:2rem;">
+          <p class="big-quote accent">美化委員会をブランド化する！</p>
+          <p>フィルター委員会からの脱却。やっていて楽しい活動を。</p>
+          <div class="hero-cta" style="margin-top:1.25rem;">
+            <a href="brand.html" class="btn btn-ghost">← ブランド化</a>
+            <a href="index.html" class="btn btn-primary">概要トップ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p><strong>美化委員会 改革計画</strong> · 2026</p>
+      <p>不本意ながら美化委員長：佐藤 晴</p>
+      <p style="margin-top:0.6rem;"><a href="https://r25347sh.github.io/bika-committee/">公式サイトへ</a></p>
+    </footer>
+  </div>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
