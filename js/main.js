@@ -7,24 +7,12 @@
     root.setAttribute("data-theme", next);
     localStorage.setItem("bika-theme", next);
   });
-  const toggle = document.querySelector(".nav-toggle");
-  const links = document.querySelector(".nav-links");
-  toggle?.addEventListener("click", (e) => {
-    e.stopPropagation();
-    const open = links?.classList.toggle("open");
-    toggle.setAttribute("aria-expanded", open ? "true" : "false");
-  });
-  document.addEventListener("click", (e) => {
-    if (!links?.classList.contains("open")) return;
-    if (links.contains(e.target) && e.target.tagName === "A") {
-      links.classList.remove("open");
-      toggle?.setAttribute("aria-expanded", "false");
-      return;
-    }
-    if (!links.contains(e.target) && e.target !== toggle && !toggle?.contains(e.target)) {
-      links.classList.remove("open");
-      toggle?.setAttribute("aria-expanded", "false");
-    }
+  // close mobile nav when a link is tapped
+  document.querySelectorAll(".nav-links a").forEach((a) => {
+    a.addEventListener("click", () => {
+      const c = document.getElementById("nav-check");
+      if (c) c.checked = false;
+    });
   });
   const io = new IntersectionObserver(
     (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("in")),
