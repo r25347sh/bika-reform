@@ -3,32 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="美化委員会改革計画 2026 — ブランド化・理念・企画">
-  <meta name="theme-color" content="#f4f1ea">
-  <!-- sitePassword: 最優先で読み込み、ログイン画面を先に出す -->
-  <script src="/sitePassword.js" defer data-allows="role:bika"></script>
-  <title>改革計画 · 美化委員会 2026</title>
+  <meta name="theme-color" content="#f3f0e8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/play.css">
-  <link rel="stylesheet" href="css/menu.css">
+  <script src="/sitePassword.js" defer data-allows="role:bika"></script>
+  <meta name="description" content="美化委員会改革計画 — 現状・課題・改善の全体像">
+  <title>概要 · 美化委員会改革計画 2026</title>
 </head>
 <body>
-  <div class="ambient" aria-hidden="true">
-    <div class="ambient-gradient"></div>
-    <div class="ambient-grid"></div>
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-    <div class="ring ring-1"></div>
-    <div class="ring ring-2"></div>
-    <div class="ripple ripple-1"></div>
-    <div class="ripple ripple-2"></div>
-  </div>
-  <canvas id="dust-canvas" aria-hidden="true"></canvas>
-
   <nav class="top-nav">
     <div class="top-nav-inner">
       <a class="nav-brand" href="index.html">美化<span>改革</span></a>
@@ -37,18 +21,13 @@
         <a href="index.html" class="active">概要</a>
         <a href="brand.html">ブランド化</a>
         <a href="plans.html">企画案</a>
-        <a href="https://r25347sh.github.io/bika-committee/">公式サイト</a>
+        <a href="projects.html">プロジェクト</a>
+        <a href="org.html">組織化</a>
       </div>
-      <button type="button" class="theme-toggle" aria-label="テーマ切替">
-        <span class="icon-sun">☀</span><span class="icon-moon">☾</span>
-      </button>
+      <button type="button" class="theme-toggle" aria-label="テーマ切替"><span class="icon-sun">☀</span><span class="icon-moon">☾</span></button>
     </div>
   </nav>
-
   <div class="page-wrap">
-    <span class="sticker sticker-1" aria-hidden="true">⚡</span>
-    <span class="sticker sticker-2" aria-hidden="true">🔥</span>
-    <span class="sticker sticker-3" aria-hidden="true">💪</span>
     <header class="hero">
       <div class="container">
         <div class="hero-badge">REFORM PLAN · 2026</div>
@@ -56,15 +35,16 @@
         <p class="hero-sub">
           不本意ながら美化委員長：佐藤 晴<br>
           このままでは風紀委員会に“美化”の看板を取られてしまう。<br>
-          これは存亡をかけた闘いである。
+          これは美化委員会の存亡をかけた闘いである。
         </p>
         <div class="mission-banner">
           <div class="label">最重要ミッション</div>
           <div class="value">美化委員会をブランド化する</div>
         </div>
         <div class="hero-cta">
-          <a href="brand.html" class="btn btn-primary">ブランド化の要件</a>
-          <a href="plans.html" class="btn btn-ghost">仕事企画案</a>
+          <a class="btn btn-primary" href="brand.html">ブランド化の要件</a>
+          <a class="btn btn-ghost" href="plans.html">仕事企画案</a>
+          <a class="btn btn-ghost" href="org.html">組織化計画</a>
         </div>
       </div>
     </header>
@@ -78,93 +58,77 @@
         <div class="grid-2">
           <div class="card reveal reveal-delay-1">
             <h3>活動目標</h3>
-            <p class="big-text">脱ハウスダスト</p>
+            <p><strong>脱ハウスダスト</strong></p>
           </div>
           <div class="card reveal reveal-delay-2">
             <h3>活動内容</h3>
-            <ul class="list">
+            <ul>
               <li>黒板消しクリーナーのフィルター掃除</li>
-              <li>掃除機のフィルター掃除・交換の呼びかけ</li>
+              <li>掃除機のフィルター掃除・交換（の呼びかけ）</li>
               <li>教室の備品管理と不足分の確認</li>
-              <li>カーテンを束ねる“タッセル”の不足分確認</li>
+              <li>カーテンを束ねる“タッセル”の不足分の確認</li>
               <li>必要に応じて清掃活動を実施</li>
             </ul>
           </div>
-        </div>
-        <div class="card danger-card reveal reveal-delay-3" style="margin-top:1.2rem;">
-          <h3>現時点での課題</h3>
-          <ul class="list">
-            <li>把握している仕事内容の不足</li>
-            <li>月イチの仕事も忘れることがある（黒板消しクリーナーのフィルター掃除）</li>
-            <li>風紀委員会に仕事を取られている気がする</li>
-            <li>外部からも「黒板消しクリーナーのフィルター掃除しかしてない」とバレている</li>
-          </ul>
-          <p class="highlight-line">そして何より、目立たない委員会すぎる！</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" style="padding-top:0.5rem;">
-      <div class="container">
-        <div class="section-header reveal">
-          <p class="eyebrow">02 · Direction</p>
-          <h2>改善案（概要）</h2>
-        </div>
-        <div class="grid-3">
-          <article class="card num-card reveal reveal-delay-1">
-            <h3>集まる機会を増やす</h3>
-            <p style="color:var(--ink-3);font-size:0.9rem;margin-top:0.4rem;">委員会単位（または学年単位）で集まれる機会を増やす</p>
-          </article>
-          <article class="card num-card reveal reveal-delay-2">
-            <h3>直前アナウンス</h3>
-            <p style="color:var(--ink-3);font-size:0.9rem;margin-top:0.4rem;">定期業務の直前に放送などでリマインド</p>
-          </article>
-          <article class="card num-card reveal reveal-delay-3">
-            <h3>仕事と企画を増やす</h3>
-            <p style="color:var(--ink-3);font-size:0.9rem;margin-top:0.4rem;">シンプルに仕事と企画を増やす！！</p>
-          </article>
-          <article class="card num-card reveal reveal-delay-1">
-            <h3>清掃の役割分担</h3>
-            <p style="color:var(--ink-3);font-size:0.9rem;margin-top:0.4rem;">風紀＝校舎外 / 美化＝校舎内。朝合わせ or 別時間</p>
-          </article>
-          <article class="card num-card reveal reveal-delay-2">
-            <h3>文化祭をハック</h3>
-            <p style="color:var(--ink-3);font-size:0.9rem;margin-top:0.4rem;">文化祭をハックして、なにかやる</p>
-          </article>
-          <article class="card num-card reveal reveal-delay-3">
-            <h3>美化広報誌</h3>
-            <p style="color:var(--ink-3);font-size:0.9rem;margin-top:0.4rem;">「保健だより」風。インフォグラフィックス的なもの</p>
-          </article>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="quote-card reveal">
-          <p class="eyebrow" style="justify-content:center;">Mission</p>
-          <p class="big-quote">一番、委員長がやりたいことは、</p>
-          <p class="big-quote accent">美化委員会をブランド化する！</p>
-          <p>このままでは、風紀委員会に“美化”の看板を取られてしまう！！<br>これは、美化委員会の存亡をかけた闘いである……</p>
-          <div class="hero-cta" style="margin-top:1.5rem;">
-            <a href="brand.html" class="btn btn-primary">ブランド化へ →</a>
-          </div>
+        <div class="section-header reveal">
+          <p class="eyebrow">02 · Issues</p>
+          <h2>現時点での課題</h2>
+        </div>
+        <ul class="list-plain reveal">
+          <li>把握している仕事内容の不足</li>
+          <li>各教室の備品に記載されている教室名がズレまくっている</li>
+          <li>月イチの仕事も忘れることがある（黒板消しクリーナーのフィルター掃除）</li>
+          <li>風紀委員会に仕事を取られている気がする</li>
+          <li>外部からも黒板消しクリーナーのフィルター掃除しかしてないとバレている</li>
+        </ul>
+        <div class="callout danger reveal">
+          <div class="title">そして何より、目立たない委員会すぎる！</div>
+          <p>フィルター委員会のままでは、ブランドも誇りも育たない。</p>
         </div>
       </div>
     </section>
 
-    <footer class="site-footer">
-      <p><strong>美化委員会 改革計画</strong> · 2026</p>
-      <p>不本意ながら美化委員長：佐藤 晴</p>
-      <p style="margin-top:0.6rem;"><a href="https://r25347sh.github.io/bika-committee/">公式サイトへ</a></p>
-    </footer>
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="eyebrow">03 · Direction</p>
+          <h2>改善案（概要）</h2>
+          <p class="section-lead">業務の洗い出しと再整理から、集まる機会・告知・企画・広報まで、一気にアップデートする。</p>
+        </div>
+        <div class="grid-2">
+          <div class="card reveal"><h3>基盤づくり</h3>
+            <ul>
+              <li>学校内の美化用品をすべて洗い出し、再整理する</li>
+              <li>委員会単位（または学年単位）で集まれる機会を増やす</li>
+              <li>定期業務の直前にアナウンス（放送など）</li>
+            </ul>
+          </div>
+          <div class="card reveal reveal-delay-1"><h3>仕事と企画を増やす</h3>
+            <ul>
+              <li>風紀の朝清掃に合わせる、または全く違う時間で清掃</li>
+              <li>風紀＝校舎外、美化＝校舎内、の役割分担</li>
+              <li>文化祭をハックして何かやる</li>
+              <li>美化委員会の広報誌（保健だより的／インフォグラフィック）</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout reveal" style="margin-top:1.25rem">
+          <div class="title">委員長が一番やりたいこと</div>
+          <p>美化委員会を<strong>ブランド化</strong>する。これは存亡をかけた闘いである。</p>
+        </div>
+        <div class="hero-cta" style="margin-top:1.5rem">
+          <a class="btn btn-primary" href="brand.html">次：ブランド化に必要なもの →</a>
+        </div>
+      </div>
+    </section>
   </div>
-  <script src="js/main.js" defer></script>
-  <script src="js/play.js" defer></script>
-  <script src="js/menu.js" defer></script>
-  <a class="site-portal" href="https://r25347sh.github.io/bika-committee/" title="公式サイトへ">
-    <span class="portal-icon" aria-hidden="true">🏠</span>
-    <span>公式サイトへ</span>
-  </a>
+  <footer class="footer"><div class="container">美化委員会改革計画 2026 · 委員長：佐藤 晴 · <a href="index.html">トップ</a></div></footer>
+  <script src="js/main.js"></script>
 </body>
 </html>
