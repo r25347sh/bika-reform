@@ -3,55 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#f3f0e8">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=nav11">
+  <link rel="stylesheet" href="css/style.css?v=nav12">
+  <link rel="stylesheet" href="css/menu.css?v=menu1">
   <script src="/sitePassword.js" defer data-allows="role:bika"></script>
-  <meta name="description" content="美化委員会のプロジェクト">
   <title>プロジェクト · 美化委員会改革計画 2026</title>
 </head>
 <body>
   <div class="bg-fun" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
-
   <nav class="top-nav" id="site-nav">
     <div class="top-nav-inner">
       <a class="nav-brand" href="index.html">美化<span>改革</span></a>
-      <input type="checkbox" id="nav-cb" class="nav-cb" aria-hidden="true">
-      <label for="nav-cb" class="nav-toggle" id="nav-toggle" aria-label="メニュー" role="button"><span></span><span></span><span></span></label>
       <div class="nav-links" id="nav-links">
-        <a href="index.html" data-nav="index">概要</a>
-        <a href="brand.html" data-nav="brand">ブランド化</a>
-        <a href="plans.html" data-nav="plans">企画案</a>
-        <a href="projects.html" data-nav="projects" class="active">プロジェクト</a>
-        <a href="org.html" data-nav="org">組織化</a>
+        <a href="index.html">概要</a><a href="brand.html">ブランド化</a><a href="plans.html">企画案</a>
+        <a href="projects.html" class="active">プロジェクト</a><a href="org.html">組織化</a>
       </div>
       <button type="button" class="theme-toggle" aria-label="テーマ切替"><span class="icon-sun">☀</span><span class="icon-moon">☾</span></button>
     </div>
   </nav>
   <div class="page-wrap">
-    <header class="hero">
-      <div class="container">
-        <div class="hero-badge">PROJECTS</div>
-        <h1>プロジェクト</h1>
-        <p class="hero-sub">実行中・検討中の改革プロジェクト。</p>
+    <header class="hero"><div class="container"><div class="hero-badge">PROJECTS</div><h1>プロジェクト</h1><p class="hero-sub">実行中・検討中の改革。</p></div></header>
+    <section class="section"><div class="container">
+      <div class="grid-2">
+        <div class="card reveal"><h3>改革計画サイト</h3><p>本サイトによる見える化。</p></div>
+        <div class="card reveal"><h3>公式サイト連携</h3><p>相互リンクと情報統一。</p></div>
       </div>
-    </header>
-    <section class="section">
-      <div class="container">
-        <div class="section-header reveal"><p class="eyebrow">Active</p><h2>進行中の取り組み</h2></div>
-        <div class="grid-2">
-          <div class="card reveal"><h3>改革計画サイト</h3><p>本サイトによる理念・企画・組織の見える化。</p></div>
-          <div class="card reveal reveal-delay-1"><h3>公式サイト連携</h3><p>美化委員会公式サイトとの相互リンクと情報統一。</p></div>
-        </div>
-        <div class="hero-cta" style="margin-top:1.5rem">
-          <a class="btn btn-primary" href="org.html">次：組織化 →</a>
-        </div>
-      </div>
-    </section>
+      <div class="hero-cta" style="margin-top:1.5rem"><a class="btn btn-primary" href="org.html">次：組織化 →</a></div>
+    </div></section>
   </div>
-  <footer class="footer"><div class="container">美化委員会改革計画 2026 · 委員長：佐藤 晴 · <a href="index.html">トップ</a></div></footer>
-  <script src="js/main.js?v=nav11"></script>
+  <footer class="footer"><div class="container"><a href="index.html">トップ</a></div></footer>
+  <button type="button" class="ham-fab" id="ham-fab" style="position:fixed;right:1rem;bottom:1rem;z-index:2147483645;width:58px;height:58px;display:flex;align-items:center;justify-content:center;background:#0a6b6e;color:#fff;border:3px solid #1a1e1b;border-radius:50%;font-size:1.35rem;cursor:pointer;" aria-label="メニュー"><span class="ham-fab-icon">☰</span></button>
+  <nav class="ham-panel" id="ham-panel" aria-hidden="true"></nav>
+  <script src="js/main.js?v=nav12"></script>
+  <script src="js/menu.js?v=menu1" defer></script>
 </body>
 </html>

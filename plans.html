@@ -4,56 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#f3f0e8">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=nav11">
+  <link rel="stylesheet" href="css/style.css?v=nav12">
+  <link rel="stylesheet" href="css/menu.css?v=menu1">
   <script src="/sitePassword.js" defer data-allows="role:bika"></script>
-  <meta name="description" content="美化委員会の仕事企画案 — 広報誌・既存業務・見回り・清掃">
   <title>企画案 · 美化委員会改革計画 2026</title>
 </head>
 <body>
   <div class="bg-fun" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
-
   <nav class="top-nav" id="site-nav">
     <div class="top-nav-inner">
       <a class="nav-brand" href="index.html">美化<span>改革</span></a>
-      <input type="checkbox" id="nav-cb" class="nav-cb" aria-hidden="true">
-      <label for="nav-cb" class="nav-toggle" id="nav-toggle" aria-label="メニュー" role="button"><span></span><span></span><span></span></label>
       <div class="nav-links" id="nav-links">
-        <a href="index.html" data-nav="index">概要</a>
-        <a href="brand.html" data-nav="brand">ブランド化</a>
-        <a href="plans.html" data-nav="plans" class="active">企画案</a>
-        <a href="projects.html" data-nav="projects">プロジェクト</a>
-        <a href="org.html" data-nav="org">組織化</a>
+        <a href="index.html">概要</a><a href="brand.html">ブランド化</a>
+        <a href="plans.html" class="active">企画案</a><a href="projects.html">プロジェクト</a><a href="org.html">組織化</a>
       </div>
       <button type="button" class="theme-toggle" aria-label="テーマ切替"><span class="icon-sun">☀</span><span class="icon-moon">☾</span></button>
     </div>
   </nav>
   <div class="page-wrap">
-    <header class="hero">
-      <div class="container">
-        <div class="hero-badge">PLANS</div>
-        <h1>仕事企画案</h1>
-        <p class="hero-sub">フィルター掃除の先にある、見える仕事・語れる仕事。</p>
+    <header class="hero"><div class="container"><div class="hero-badge">PLANS</div><h1>仕事企画案</h1><p class="hero-sub">フィルター掃除の先にある、見える仕事。</p></div></header>
+    <section class="section"><div class="container">
+      <div class="grid-2">
+        <div class="card reveal"><h3>広報・発信</h3><p>活動を学校全体に伝える。</p></div>
+        <div class="card reveal"><h3>既存業務の強化</h3><p>忘れない・見える化の仕組み。</p></div>
+        <div class="card reveal"><h3>見回り・点検</h3><p>早期発見のための定期点検。</p></div>
+        <div class="card reveal"><h3>清掃イベント</h3><p>全校参加の美化デー。</p></div>
       </div>
-    </header>
-    <section class="section">
-      <div class="container">
-        <div class="section-header reveal"><p class="eyebrow">Ideas</p><h2>企画の方向性</h2></div>
-        <div class="grid-2">
-          <div class="card reveal"><h3>広報・発信</h3><p>美化の活動を学校全体に伝える手段（広報誌・掲示・SNS連携など）。</p></div>
-          <div class="card reveal reveal-delay-1"><h3>既存業務の強化</h3><p>フィルター掃除・備品管理を「忘れない・見える化」する仕組み。</p></div>
-          <div class="card reveal reveal-delay-2"><h3>見回り・点検</h3><p>教室・廊下・設備の定期点検で問題を早期発見する。</p></div>
-          <div class="card reveal reveal-delay-3"><h3>清掃イベント</h3><p>全校参加の美化デーやテーマ清掃で存在感を出す。</p></div>
-        </div>
-        <div class="hero-cta" style="margin-top:1.5rem">
-          <a class="btn btn-primary" href="projects.html">次：プロジェクト →</a>
-        </div>
-      </div>
-    </section>
+      <div class="hero-cta" style="margin-top:1.5rem"><a class="btn btn-primary" href="projects.html">次：プロジェクト →</a></div>
+    </div></section>
   </div>
-  <footer class="footer"><div class="container">美化委員会改革計画 2026 · 委員長：佐藤 晴 · <a href="index.html">トップ</a></div></footer>
-  <script src="js/main.js?v=nav11"></script>
+  <footer class="footer"><div class="container"><a href="index.html">トップ</a></div></footer>
+  <button type="button" class="ham-fab" id="ham-fab" style="position:fixed;right:1rem;bottom:1rem;z-index:2147483645;width:58px;height:58px;display:flex;align-items:center;justify-content:center;background:#0a6b6e;color:#fff;border:3px solid #1a1e1b;border-radius:50%;font-size:1.35rem;cursor:pointer;" aria-label="メニュー"><span class="ham-fab-icon">☰</span></button>
+  <nav class="ham-panel" id="ham-panel" aria-hidden="true"></nav>
+  <script src="js/main.js?v=nav12"></script>
+  <script src="js/menu.js?v=menu1" defer></script>
 </body>
 </html>
