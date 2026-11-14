@@ -9,13 +9,13 @@
     localStorage.setItem("bika-theme", next);
   });
 
-  // ===== Mobile nav: class-based toggle (reliable) =====
+  // ===== Mobile nav: default VISIBLE in CSS; JS starts closed with .is-closed =====
   const nav = document.getElementById("site-nav");
   const toggle = document.querySelector(".nav-toggle");
-  const links = document.getElementById("nav-links");
 
   function setOpen(open) {
     if (!nav) return;
+    nav.classList.toggle("is-closed", !open);
     nav.classList.toggle("is-open", !!open);
     if (toggle) {
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
@@ -23,34 +23,36 @@
     }
   }
 
+  if (nav && window.innerWidth <= 900) setOpen(false);
+  else if (nav) setOpen(true);
+
   if (toggle && nav) {
     toggle.addEventListener("click", (e) => {
       e.preventDefault();
       e.stopPropagation();
-      setOpen(!nav.classList.contains("is-open"));
+      const open = nav.classList.contains("is-closed");
+      setOpen(open);
     });
   }
 
-  // close when a link is tapped
   document.querySelectorAll(".nav-links a").forEach((a) => {
     a.addEventListener("click", () => setOpen(false));
   });
 
-  // close on outside click
   document.addEventListener("click", (e) => {
-    if (!nav || !nav.classList.contains("is-open")) return;
+    if (!nav || nav.classList.contains("is-closed")) return;
     if (nav.contains(e.target)) return;
+    if (window.innerWidth > 900) return;
     setOpen(false);
   });
 
-  // close on Escape
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") setOpen(false);
   });
 
-  // close if resized to desktop
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 900) setOpen(false);
+    if (window.innerWidth > 900) setOpen(true);
+    else if (!nav.classList.contains("is-open")) setOpen(false);
   });
 
   const io = new IntersectionObserver(
