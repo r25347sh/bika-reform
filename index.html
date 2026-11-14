@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=nav12">
+  <link rel="stylesheet" href="css/menu.css?v=menu1">
   <script src="/sitePassword.js" defer data-allows="role:bika"></script>
   <meta name="description" content="美化委員会改革計画 — 現状・課題・改善の全体像">
   <title>概要 · 美化委員会改革計画 2026</title>
@@ -18,8 +19,6 @@
   <nav class="top-nav" id="site-nav">
     <div class="top-nav-inner">
       <a class="nav-brand" href="index.html">美化<span>改革</span></a>
-      <input type="checkbox" id="nav-cb" class="nav-cb" aria-hidden="true">
-      <label for="nav-cb" class="nav-toggle" id="nav-toggle" aria-label="メニュー" role="button"><span></span><span></span><span></span></label>
       <div class="nav-links" id="nav-links">
         <a href="index.html" data-nav="index" class="active">概要</a>
         <a href="brand.html" data-nav="brand">ブランド化</a>
@@ -125,6 +124,13 @@
       </div>
     </footer>
   </div>
+
+  <button type="button" class="ham-fab" id="ham-fab" style="position:fixed;right:1rem;bottom:1rem;z-index:2147483645;width:58px;height:58px;display:flex;align-items:center;justify-content:center;background:#0a6b6e;color:#fff;border:3px solid #1a1e1b;border-radius:50%;font-size:1.35rem;cursor:pointer;" aria-label="メニュー" aria-expanded="false" aria-controls="ham-panel">
+    <span class="ham-fab-icon" aria-hidden="true">☰</span>
+  </button>
+  <nav class="ham-panel" id="ham-panel" aria-hidden="true"></nav>
+
   <script src="js/main.js?v=nav12"></script>
+  <script src="js/menu.js?v=menu1" defer></script>
 </body>
 </html>
