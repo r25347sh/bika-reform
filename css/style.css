@@ -29,7 +29,7 @@ a:hover{text-decoration:underline}
 @keyframes floaty{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(2%,3%) scale(1.05)}}
 .page-wrap{position:relative;z-index:1;min-height:60vh}
 
-/* ===== SITE NAV — JS class toggle (.is-open) ===== */
+/* ===== SITE NAV — default open on mobile; JS uses .is-closed ===== */
 .top-nav {
   position: sticky;
   top: 0;
@@ -151,13 +151,13 @@ a:hover{text-decoration:underline}
 [data-theme="dark"] .theme-toggle .icon-sun { display: none; }
 [data-theme="dark"] .theme-toggle .icon-moon { display: inline; }
 
-/* Mobile drawer */
+/* Mobile drawer — default VISIBLE (JS-safe). .is-closed hides. */
 @media (max-width: 900px) {
   .nav-toggle {
     display: flex !important;
   }
   .nav-links {
-    display: none !important;
+    display: flex !important;
     position: absolute !important;
     top: calc(100% + 8px) !important;
     left: 0 !important;
@@ -173,17 +173,16 @@ a:hover{text-decoration:underline}
     gap: 0.15rem !important;
     flex: none !important;
   }
-  /* open state driven by JS class on .top-nav */
-  .top-nav.is-open .nav-links {
-    display: flex !important;
+  .top-nav.is-closed .nav-links {
+    display: none !important;
   }
-  .top-nav.is-open .nav-toggle span:nth-child(1) {
+  .top-nav:not(.is-closed) .nav-toggle span:nth-child(1) {
     transform: translateY(7.5px) rotate(45deg);
   }
-  .top-nav.is-open .nav-toggle span:nth-child(2) {
+  .top-nav:not(.is-closed) .nav-toggle span:nth-child(2) {
     opacity: 0;
   }
-  .top-nav.is-open .nav-toggle span:nth-child(3) {
+  .top-nav:not(.is-closed) .nav-toggle span:nth-child(3) {
     transform: translateY(-7.5px) rotate(-45deg);
   }
   .nav-links a {
