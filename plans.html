@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=nav9">
+  <link rel="stylesheet" href="css/style.css?v=nav11">
   <script src="/sitePassword.js" defer data-allows="role:bika"></script>
   <meta name="description" content="美化委員会の仕事企画案 — 広報誌・既存業務・見回り・清掃">
   <title>企画案 · 美化委員会改革計画 2026</title>
@@ -18,7 +18,8 @@
   <nav class="top-nav" id="site-nav">
     <div class="top-nav-inner">
       <a class="nav-brand" href="index.html">美化<span>改革</span></a>
-      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+      <input type="checkbox" id="nav-cb" class="nav-cb" aria-hidden="true">
+      <label for="nav-cb" class="nav-toggle" id="nav-toggle" aria-label="メニュー" role="button"><span></span><span></span><span></span></label>
       <div class="nav-links" id="nav-links">
         <a href="index.html" data-nav="index">概要</a>
         <a href="brand.html" data-nav="brand">ブランド化</a>
@@ -33,100 +34,26 @@
     <header class="hero">
       <div class="container">
         <div class="hero-badge">PLANS</div>
-        <h1>仕事<span class="accent">企画案</span></h1>
-        <p class="hero-sub">広報・記録・見回り・校内清掃まで。既存業務の強化と新しい仕事を同時に走らせる。</p>
+        <h1>仕事企画案</h1>
+        <p class="hero-sub">フィルター掃除の先にある、見える仕事・語れる仕事。</p>
       </div>
     </header>
-
     <section class="section">
       <div class="container">
-        <div class="section-header reveal"><p class="eyebrow">01</p><h2>美化広報誌の制作</h2>
-          <p class="section-lead">インフォグラフィックを取り入れた、雑誌感覚で読める美化広報誌を作成・公開する。</p>
-        </div>
+        <div class="section-header reveal"><p class="eyebrow">Ideas</p><h2>企画の方向性</h2></div>
         <div class="grid-2">
-          <div class="card reveal"><h3>掲載内容案</h3>
-            <ul>
-              <li>投票形式の「校内クリーンランキング」（最もきれいな教室・廊下の表彰）</li>
-              <li>ハウスダスト対策や掃除の豆知識</li>
-              <li>その時々の面白そうな企画</li>
-            </ul>
-          </div>
-          <div class="card reveal reveal-delay-1"><h3>掲載の仕方</h3>
-            <ul>
-              <li>各クラスに1枚のポスター形式</li>
-              <li>冊子形式で各学年の Classroom に電子配布</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header reveal"><p class="eyebrow">02</p><h2>既存業務の強化・恒例化</h2>
-          <p class="section-lead">フィルター類、タッセル確認、備品管理、必要に応じた清掃活動を再確認し、習慣にする。</p>
-        </div>
-        <div class="grid-2">
-          <div class="card reveal"><h3>記録管理系</h3>
-            <ul>
-              <li>フィルター類：Google Spreadsheets の記録表（生徒記入）</li>
-              <li>タッセル・備品：Google Forms の常時受付型報告フォーム（先生・美化委員会向け）</li>
-            </ul>
-          </div>
-          <div class="card reveal reveal-delay-1"><h3>業務恒例化系</h3>
-            <p>月に一度、黒板消しクリーナーのフィルター掃除のタイミングで、掃除機フィルター・備品・タッセルの確認を行い、記録表に残す。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header reveal"><p class="eyebrow">03</p><h2>校内の見回り</h2></div>
-        <div class="card reveal">
-          <ul>
-            <li>毎日の昼休み、または週一などで校内を見回り、きれいなところと汚いところをチェック（紙または Spreadsheets）</li>
-            <li>担当は委員長・副委員長ペア、または委員会全体／学年委員での担当分け</li>
-            <li>委員長（5G 佐藤 晴）は出るつもり</li>
-            <li>見回り時に美化ピンバッジを装着</li>
-            <li>毎日、教室のゴミ箱の確認・必要に応じて捨てに行く</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header reveal"><p class="eyebrow">04</p><h2>美化委員の校内清掃</h2>
-          <p class="section-lead">風紀が校舎外を朝清掃するように、美化は校舎内を担う。自分に関わりの深い場所を徹底的に。</p>
-        </div>
-        <div class="card reveal">
-          <h3>行事・学校見学前の特別清掃</h3>
-          <p>受験生向け校舎内見学、文化祭・体育祭などの前に、校舎内外の美化委員会による清掃を行う。</p>
-        </div>
-        <div class="table-wrap reveal" style="margin-top:1rem">
-          <table class="data">
-            <thead><tr><th>メリット</th><th>デメリット＆改善案</th></tr></thead>
-            <tbody>
-              <tr>
-                <td>日頃からの美化意識を構築できる<br>学校がきれいに保たれやすくなる</td>
-                <td>
-                  教室で勉強する人が集中できない<br>
-                  → 掃除機以外の清掃／自習希望者を特定教室へ<br><br>
-                  部活などで来れない委員がいる<br>
-                  → 任意制またはシフト制
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="card reveal"><h3>広報・発信</h3><p>美化の活動を学校全体に伝える手段（広報誌・掲示・SNS連携など）。</p></div>
+          <div class="card reveal reveal-delay-1"><h3>既存業務の強化</h3><p>フィルター掃除・備品管理を「忘れない・見える化」する仕組み。</p></div>
+          <div class="card reveal reveal-delay-2"><h3>見回り・点検</h3><p>教室・廊下・設備の定期点検で問題を早期発見する。</p></div>
+          <div class="card reveal reveal-delay-3"><h3>清掃イベント</h3><p>全校参加の美化デーやテーマ清掃で存在感を出す。</p></div>
         </div>
         <div class="hero-cta" style="margin-top:1.5rem">
-          <a class="btn btn-primary" href="projects.html">次：色々変えようプロジェクト →</a>
+          <a class="btn btn-primary" href="projects.html">次：プロジェクト →</a>
         </div>
       </div>
     </section>
   </div>
   <footer class="footer"><div class="container">美化委員会改革計画 2026 · 委員長：佐藤 晴 · <a href="index.html">トップ</a></div></footer>
-  <script src="js/main.js?v=nav9"></script>
+  <script src="js/main.js?v=nav11"></script>
 </body>
 </html>
